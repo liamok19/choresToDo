@@ -1,0 +1,1 @@
+//get / homepage for Parent and child 
