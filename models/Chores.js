@@ -5,9 +5,11 @@ class Chores extends Model {}
 
 Chores.init(
     {
+    // define columns
         id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+    //required primary key for the product field.
         primaryKey: true,
         autoIncrement: true,
         },
