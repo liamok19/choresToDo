@@ -3,8 +3,8 @@ const Child = require('./Child');
 const Chores = require('./Chores');
 
 //pending models information
-const Parent = require('./Parent');
-const User = require('./User');
+// const Parent = require('./Parent');
+// const User = require('./User');
 
 // Products belongsTo Category
 Child.belongsTo(Parent, {
@@ -20,6 +20,6 @@ Chores.hasMany(Child, {
 module.exports = {
     Child,
     Chores,
-    Parent,
-    User,
+    // Parent,
+    // User,
 };
