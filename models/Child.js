@@ -5,9 +5,11 @@ class Child extends Model {}
 
 Child.init(
     {
+    // define columns
         id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+    //required primary key for the product field.    
         primaryKey: true,
         autoIncrement: true,
         },
