@@ -24,7 +24,6 @@ const userdata = [
     password: 'JennyWork',
     hint: 'my email address',
     type: 'Parent',
-
   },
   {
     user_name: 'Jenny',
