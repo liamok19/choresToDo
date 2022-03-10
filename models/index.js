@@ -5,7 +5,7 @@ const Chores = require('./Chores');
 
 //pending models information
 const Parent = require('./Parent');
-// const User = require('./User');
+const User = require('./User');
 
 // Products belongsTo Category
 
@@ -21,25 +21,43 @@ Child.belongsTo(Parent, {
 Parent.hasMany(Chores, {
     foreignKey: chore_id,
     onDelete: 'CASCADE',
-}),
+});
 
 Chores.belongsTo(Parent, {
     foreginKey: parent_id,
-}),
+});
 
 Child.hasMany(Chores, {
     foreignKey: chore_id,
     onDelete: 'CASCADE',
-}),
+});
 
 Chores.hasMany(Child, {
     foreignKey:'child_id',
     onDelete: 'CASCADE',
 });
 
+User.hasOne(Parent, {
+    foreginKey: 'user_id', 
+    onDelete: 'CASCADE',
+}); 
+
+Parent.belongsTo(User, {
+    foreginKey: 'user_id', 
+});
+
+User.hasOne(Child, {
+    foreginKey: 'user_id', 
+    onDelete: 'CASCADE',
+}); 
+
+Child.belongsTo(User, {
+    foreginKey: 'user_id', 
+});
+
 module.exports = {
     Child,
     Chores,
     Parent,
-    // User,
+    User,
 };
