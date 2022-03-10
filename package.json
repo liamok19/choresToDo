@@ -1,0 +1,26 @@
+{
+  "name": "chorestodo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "servers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamok19/choresToDo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liamok19/choresToDo/issues"
+  },
+  "homepage": "https://github.com/liamok19/choresToDo#readme",
+  "dependencies": {
+    "inquirer": "^8.2.1"
+  }
+}
