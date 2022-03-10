@@ -32,9 +32,8 @@ Child.hasMany(Chores, {
     onDelete: 'CASCADE',
 });
 
-Chores.hasMany(Child, {
+Chores.belongsTo(Child, {
     foreignKey:'child_id',
-    onDelete: 'CASCADE',
 });
 
 User.hasOne(Parent, {

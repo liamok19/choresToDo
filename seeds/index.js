@@ -1,15 +1,27 @@
-// const sequelize = require('../config/connection');
-// const seedGallery = require('./parentData');
-// const seedPaintings = require('./childData');
+require('dotenv').config({path: './../.env'});
+const seedUser = require('./userData');
+const seedParent = require('./parentData');
+const seedChild = require('./childData');
+const seedChores = require('./choresData');
 
-// const seedAll = async () => {
-//   await sequelize.sync({ force: true });
+const sequelize = require('../config/connection');
 
-//   await seedGallery();
+const seedAll = async () => {
+    await sequelize.sync({ force: true });
+    console.log('\n----- DATABASE SYNCED -----\n');
+    await seedUser();
+    console.log('\n----- USER SEEDED -----\n');
 
-//   await seedPaintings();
+    await seedParent();
+    console.log('\n----- PARENT SEEDED -----\n');
 
-//   process.exit(0);
-// };
+    await seedChild();
+    console.log('\n----- CHILD SEEDED -----\n');
 
-// seedAll();
+    await seedChores();
+    console.log('\n----- CHORES SEEDED -----\n');
+
+    process.exit(0);
+};
+console.log(seedAll);
+seedAll();

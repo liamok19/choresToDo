@@ -23,6 +23,8 @@ const userdata = [
     user_name: 'Sommer@mail.com',
     password: 'JennyWork',
     hint: 'my email address',
+    type: 'Parent',
+
   },
   {
     user_name: 'Jenny',
