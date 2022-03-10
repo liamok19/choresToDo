@@ -19,16 +19,16 @@ Child.belongsTo(Parent, {
 });
 
 Parent.hasMany(Chores, {
-    foreignKey: chore_id,
+    foreignKey: 'chore_id',
     onDelete: 'CASCADE',
 });
 
 Chores.belongsTo(Parent, {
-    foreginKey: parent_id,
+    foreginKey: 'parent_id',
 });
 
 Child.hasMany(Chores, {
-    foreignKey: chore_id,
+    foreignKey: 'chore_id',
     onDelete: 'CASCADE',
 });
 
@@ -38,21 +38,21 @@ Chores.hasMany(Child, {
 });
 
 User.hasOne(Parent, {
-    foreginKey: 'user_id', 
+    foreginKey: 'email', 
     onDelete: 'CASCADE',
 }); 
 
 Parent.belongsTo(User, {
-    foreginKey: 'user_id', 
+    foreginKey: 'user_name', 
 });
 
 User.hasOne(Child, {
-    foreginKey: 'user_id', 
+    foreginKey: 'user_name', 
     onDelete: 'CASCADE',
 }); 
 
 Child.belongsTo(User, {
-    foreginKey: 'user_id', 
+    foreginKey: 'user_name', 
 });
 
 module.exports = {
