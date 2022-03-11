@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/liamok19/choresToDo#readme",
   "dependencies": {
-    "inquirer": "^8.2.1"
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "inquirer": "^8.2.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
   }
 }
