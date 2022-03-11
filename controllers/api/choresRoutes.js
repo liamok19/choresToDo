@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Child, Chores } = require('../../models');
 
-// The `/api/categories` endpoint
+// The `/api/chores` endpoint
 
-router.get('/', async (req, res) => {
+router.get('/api/chores', async (req, res) => {
     // find all categories
     // be sure to include its associated Products
     try {
