@@ -1,15 +1,35 @@
 const router = require('express').Router();
-const { Child, Parent, Chores, User } = require('../../models');
+const { Child, Chores } = require('../../models');
 
+// The `/api/chores` endpoint
 
-// get all products
-router.get('/', async (req, res) => {
-    // find all children
+router.get('/api/chores', async (req, res) => {
+    // find all categories
+    // be sure to include its associated Products
     try {
-        const childData = await Child.findAll();
-        res.status(200).json(childData);
+        const choresData = await Chores.findAll();
+        res.status(200).json(choresData);
     } catch (err) {
         res.status(500).json(err);
+    }
+    });
+
+    router.get('/:id', async (req, res) => {
+    // find one category by its `id` value
+    // be sure to include its associated Products
+    try {
+        const choresData = await Chores.findByPk(req.params.id, {
+        // JOIN to get the Product for this Category
+        include: [{ model: Child }],
+        });
+    if (!choresData) {
+        res.status(404).json({ message: 'No Chores found with this id!' });
+    return;
+    }
+
+    res.status(200).json(choresData);
+    } catch (err) {
+    res.status(500).json(err);
     }
 });
 
