@@ -1,8 +1,13 @@
 const { valuesIn } = require('lodash');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model {
+  async checkPassword(loginPw) {
+    return await bcrypt.compare(loginPw, User.password)
+  }
+}
 
 User.init(
   {
@@ -40,6 +45,16 @@ User.init(
         type: DataTypes.STRING,
         allowNull: true,
       },
+  },
+  {
+    hooks: {
+      beforeCreate: async (user) => {
+        user.password = await bcrypt.hash(user.password, 10);
+      }, 
+      beforeUpdate: async (user) => {
+        user.password = await bcrypt.hash(user.password, 10);
+      },
+    },
   },
   {
     sequelize,
