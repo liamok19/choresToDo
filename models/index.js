@@ -2,15 +2,11 @@
 const { userInfo } = require('os');
 const Child = require('./Child');
 const Chores = require('./Chores');
-
-//pending models information
 const Parent = require('./Parent');
 const User = require('./User');
 
-// Products belongsTo Category
-
 Parent.hasMany(Child, {
-    foreignKey: 'child-id',
+    foreignKey: 'child_id',
     onDelete: 'CASCADE',
 });
 Child.belongsTo(Parent, {
