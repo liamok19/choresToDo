@@ -10,19 +10,19 @@ Parent.init(
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            },
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            unique: true,
+            validate: {
+                isEmail: true,
             },
-            email: {
-                type: DataTypes.STRING,
-                allowNull: true,
-                unique: true,
-                validate: {
-                  isEmail: true,
-                },
-            },
+        },
         chart: {
             type: DataTypes.STRING,
             allowNull: false,
