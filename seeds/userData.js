@@ -2,79 +2,79 @@ const { User } = require('../models');
 
 const userdata = [
   {
-    user_name: 'jo@mail.com',
+    username: 'jo@mail.com',
     password: 'jomail',
     hint: 'no @ in my email address',
-    type: 'Parent',
+    usertype: 'Parent',
   },
   {
-    user_name: 'Sally B',
+    username: 'Sally B',
     password: 'Luna',
     hint: 'The name of our dog',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Byron B',
+    username: 'Byron B',
     password: 'Luna',
     hint: 'The name of our dog',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Sommer@mail.com',
+    username: 'Sommer@mail.com',
     password: 'JennyWork',
     hint: 'my email address',
-    type: 'Parent',
+    usertype: 'Parent',
   },
   {
-    user_name: 'Jenny',
+    username: 'Jenny',
     password: 'Hermoine',
     hint: 'Your favourite wizard',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'peace@mail.com',
+    username: 'peace@mail.com',
     password: 'OurCh0res',
     hint: 'Name of our chores chart',
-    type: 'Parent',
+    usertype: 'Parent',
   },
   {
-    user_name: 'Faith',
+    username: 'Faith',
     password: 'First',
     hint: 'Which child are you?',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Hope',
+    username: 'Hope',
     password: 'Second',
     hint: 'Which child are you?',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Grace',
+    username: 'Grace',
     password: 'Third',
     hint: 'Which child are you?',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Les@mail.com',
+    username: 'Les@mail.com',
     password: 'lesStuff',
     hint: 'My things',
-    type: 'Parent',
+    usertype: 'Parent',
   },
   {
-    user_name: 'Dylan',
+    username: 'Dylan',
     password: 'Muggles',
     hint: 'The name of your pet?',
-    type: 'Child',
+    usertype: 'Child',
   },
   {
-    user_name: 'Dayne',
+    username: 'Dayne',
     password: 'Muggins',
     hint: 'The name of your pet?',
-    type: 'Child',
+    usertype: 'Child',
   },
 ];
-const seedUser = () => Parent.bulkCreate(userdata);
+const seedUser = () => User.bulkCreate(userdata);
 
 module.exports = seedUser;
 

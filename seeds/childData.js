@@ -2,28 +2,28 @@ const { Child } = require('../models');
 
 const childData = [
     {
-        user_name: 'Sally B',
+        name: 'Sally B',
     },
     {
-        user_name: 'Byron B',
+        name: 'Byron B',
     },
     {
-        user_name: 'Jenny',
+        name: 'Jenny',
     },
     {
-        user_name: 'Faith',
+        name: 'Faith',
     },
     {
-        user_name: 'Hope',
+        name: 'Hope',
     },
     {
-        user_name: 'Grace',
+        name: 'Grace',
     },
     {
-        user_name: 'Dylan',
+        name: 'Dylan',
     },
     {
-        user_name: 'Dayne',
+        name: 'Dayne',
     },
 ];
 
