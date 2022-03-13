@@ -3,7 +3,7 @@ const { Child, Chores } = require('../../models');
 
 // The `/api/chores` endpoint
 
-router.get('/api/chores', async (req, res) => {
+router.get('/api/chores/:id', async (req, res) => {
     // find all categories
     // be sure to include its associated Products
     try {
