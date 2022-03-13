@@ -74,7 +74,10 @@ const userdata = [
     usertype: 'Child',
   },
 ];
-const seedUser = () => User.bulkCreate(userdata);
+const seedUser = () => User.bulkCreate(userdata, {
+  individualHooks: true, 
+  returning: true,
+});
 
 module.exports = seedUser;
 

@@ -2,6 +2,9 @@ const { valuesIn } = require('lodash');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
+const { async } = require('rxjs');
+
+// console.log(sequelize);
 
 class User extends Model {
   async checkPassword(loginPw) {
@@ -47,6 +50,12 @@ User.init(
       },
   },
   {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
+
     hooks: {
       beforeCreate: async (user) => {
         user.password = await bcrypt.hash(user.password, 10);
@@ -55,13 +64,6 @@ User.init(
         user.password = await bcrypt.hash(user.password, 10);
       },
     },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user',
   }
 );
 
