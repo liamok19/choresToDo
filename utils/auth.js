@@ -5,5 +5,7 @@ const withAuth = (req, res, next) => {
     } else {
       next();
     }
+    console.log(req.session);
+
   };
   module.exports = withAuth;
