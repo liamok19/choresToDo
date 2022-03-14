@@ -77,7 +77,7 @@ try {
       return;
     }
 
-    res.status(200).json(productData);
+    res.status(200).json(parentData);
   } catch (err) {
     res.status(500).json(err);
   }

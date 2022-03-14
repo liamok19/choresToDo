@@ -8,8 +8,8 @@ router.get('/', withAuth, async (req, res) => {
       attributes: { exclude: ['password'] },
       order: [['username', 'ASC']],
     });
-//not sure where or why project is used??
-    const users = userData.map((project) => project.get({ plain: true }));
+
+    const users = userData.map((User) => User.get({ plain: true }));
 
     res.render('homepage', {
       users,
