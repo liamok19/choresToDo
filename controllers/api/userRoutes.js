@@ -69,8 +69,9 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
+    console.log(req);
     const userData = await User.findOne({ where: { username: req.body.username } });
-
+    console.log(userData);
     if (!userData) {
       res
         .status(400)
@@ -93,7 +94,7 @@ router.post('/login', async (req, res) => {
     res.json({ user: userData, message: 'You are now logged in!' });
 
   } catch (err) {
-    res.status(400).json(err);
+    res.status(400).json(err.message);
   }
 });
 

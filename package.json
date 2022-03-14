@@ -22,8 +22,11 @@
   "homepage": "https://github.com/liamok19/choresToDo#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "express-session": "^1.17.2",
     "inquirer": "^8.2.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0"
