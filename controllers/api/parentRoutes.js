@@ -1,29 +1,13 @@
 const router = require('express').Router();
 const { request } = require('express');
-const { Parent, Chores } = require('../../models');
+const { Parent } = require('../../models');
 
-// get all parents ???
-// router.get('/', async (req, res) => {
-//   try {
-//     const parentData = await Parent.findAll({
-//       include: [
-//         {model: User},
-//       ]
-//     });
-//     res.status(200).json(parentData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 // get parent details using the parent_id, assumed authentication done and user has access
 router.get('/:id',  async (req, res) => {
   try {
     const parentData = await Parent.findByPk(req.params.id, {
-      include: [
-        {model: Child, through: ParentChild},  
-        {model: Chores, through: ParentChores},
-      ]
+      
     });
 
     if (!parentData) {
@@ -42,12 +26,13 @@ router.post('/', async (req, res) => {
 
     try {
       const parentData = await Parent.create({
-        name: req.body.parent_name,
+        name: req.body.name,
         email: req.body.email,
         chart: req.body.chart,
+        user_id: req.body.user_id
       })
       .then ((parent) => {
-        return res.status(200).json(parentData)
+        return res.status(200).json(parent)
         }
     )}
     catch (err) { 
@@ -56,24 +41,27 @@ router.post('/', async (req, res) => {
     }
 });
 
-//  update parent but need to consider the impact on user id due to email change
-// router.put('/:id', async (req, res) => {
-//     try {
-//       const parentData = await Parent.update({
-//         name: req.body.parent_name,
-//         email: req.body.email,
-//         chart: req.body.chart,
-//       })
-//       .then ((parent) => {
+
+router.put('/:id', async (req, res) => {
+    try {
+      const parentData = await Parent.update({
+        name: req.body.parent_name,
+        email: req.body.email,
+        chart: req.body.chart,
+        where: {
+          id: req.params.id
+      }
+      })
+      .then ((parent) => {
         
-//           return res.status(200).json(parentData)
-//         }
-//     )}
-//   catch (err) {
-//     console.log(err.message);
-//     res.status(400).json(err.message);
-//   };
-// });
+          return res.status(200).json(parentData)
+        }
+    )}
+  catch (err) {
+    console.log(err.message);
+    res.status(400).json(err.message);
+  };
+});
 
 router.delete('/:id', async (req, res) => {
   

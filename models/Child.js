@@ -5,36 +5,45 @@ class Child extends Model {}
 
 Child.init(
     {
-    // define columns
+        // define columns
         id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    //required primary key for the product field.    
-        primaryKey: true,
-        autoIncrement: true,
-    },
-        name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-//     numberOfStars: {
-//     type: DataTypes.INTEGER,
-    // },
-        parent_id: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'parent',
-            key: 'id',
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
         },
+        name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        TotalCredits: {
+            type: DataTypes.INTEGER,
+        },
+        creditType: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        parent_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'parent',
+                foreignKey: 'id',
+            }
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                foreignKey: 'id',
+            },
+        },
+    },{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Child',
     },
-    },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'Child',
-    }
 );
 
 module.exports = Child;
