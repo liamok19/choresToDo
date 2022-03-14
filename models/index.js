@@ -1,37 +1,38 @@
 // import models
 const { userInfo } = require('os');
+const User = require('./User');
 const Child = require('./Child');
 const Chores = require('./Chores');
 const Parent = require('./Parent');
-const User = require('./User');
+
 
 // Parent.hasMany(Child, {
 //     // foreignKey: 'child_id',
 //     onDelete: 'CASCADE',
 // });
 
-Child.belongsTo(Parent, {
-    foreignKey: 'parent_id',
-    onDelete: 'CASCADE',
-});
+// Child.belongsTo(Parent, {
+//     foreignKey: 'parent_id',
+//     onDelete: 'CASCADE',
+// });
 
 // Parent.hasMany(Chores, {
 //     foreignKey: 'chores_id',
 //     onDelete: 'CASCADE',
 // });
 
-Chores.belongsTo(Parent, {
-    foreginKey: 'parent_id',
-});
+// Chores.belongsTo(Parent, {
+//     foreignKey: 'parent_id',
+// });
 
 // Child.hasMany(Chores, {
 //     foreignKey: 'chores_id',
 //     onDelete: 'CASCADE',
 // });
 
-Chores.belongsTo(Child, {
-    foreignKey:'child_id',
-});
+// Chores.belongsTo(Child, {
+//     foreignKey:'child_id',
+// });
 
 // User.hasOne(Parent, {
 //     foreginKey: 'parent_id', 
@@ -39,7 +40,7 @@ Chores.belongsTo(Child, {
 // }); 
 
 Parent.belongsTo(User, {
-    foreginKey: 'user_id', 
+    foreignKey: 'user_id', 
 });
 
 // User.hasOne(Child, {
@@ -48,7 +49,7 @@ Parent.belongsTo(User, {
 // }); 
 
 Child.belongsTo(User, {
-    foreginKey: 'user_id', 
+    foreignKey: 'user_id', 
 });
 
 module.exports = {

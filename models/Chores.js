@@ -6,20 +6,19 @@ class Chores extends Model {}
 Chores.init(
     {
     // define columns
-        id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-    //required primary key for the product field.
         primaryKey: true,
         autoIncrement: true,
     },
-        name: {
+    name: {
             type: DataTypes.STRING,
             allowNull: false,
-        },
-        description: {
+    },
+    description: {
             type: DataTypes.STRING,
-        },
+    },
         //Days later feature 
         // date_created: {
         //     type: DataTypes.DATE,
@@ -27,30 +26,38 @@ Chores.init(
         //     defaultValue: DataTypes.NOW,
         // },
         //simplified VS pro version
-        status: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        //Leater feature
-        // star_value: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
-        parent_id: {
+    status: {
+            type: DataTypes.BOOLEAN,
+            default: false,
+    },
+
+    NumberofCredits: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+
+    parent_id: {
         type: DataTypes.INTEGER,
         references: {
             model: 'parent',
-            key: 'id',
-        },
+            Foreignkey: 'id',
         },
     },
-    {
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'Chores',
+    child_id: {
+        type: DataTypes.INTEGER,
+        references: {
+            model: 'child',
+            Foreignkey: 'id',
+        },  
     }
+},
+{
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Chores',
+}
 );
 
 module.exports = Chores;
