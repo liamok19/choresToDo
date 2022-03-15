@@ -92,7 +92,7 @@ router.post('/', async (req, res) => {
         return;
       };
 
-      const choresData = await Chores.update({
+      const choresData = await Chores.update(req.body, {
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
@@ -100,18 +100,14 @@ router.post('/', async (req, res) => {
         parent_id: req.body.parent_id,
         child_id: req.body.child_id,
         where: {
-          id: req.params.id
-      }
-      })
-      .then ((chores) => {
-        
-          return res.status(200).json(choresData)
+          id: req.params.id,
         }
-    )}
-  catch (err) {
-    console.log(err.message);
-    res.status(400).json(err.message);
-  };
-});
+      })
+      res.status(200).json(choresData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+  }
+);
 
 module.exports = router;
