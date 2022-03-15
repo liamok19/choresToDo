@@ -1,6 +1,7 @@
     <header>
         <div class="row">
             <div class="col">
+                <h1>{{abc}}</h1>
                 <h1>{{child.name}}{{parent.chart}}</h1>
             </div>
         </div>
@@ -30,30 +31,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each chores as |chore|}}
                                     <tr>
-                                    <th scope="row">{{chores.name}}</th>
-                                    <td>{{chores.description}}</td>
-                                    <td>{{chores.status}}</td>
+                                    <th scope="row">{{chore.name}}</th>
+                                    <td>{{chore.description}}</td>
+                                    <td>{{chore.status}}</td>
                                     <td>
                                         <button type="submit" class="btn btn-success ms-1">Finished</button>
                                     </td>
                                     </tr>
-                                    <tr>
-                                    <th scope="row">{{chores.name}}</th>
-                                    <td>{{chores.description}}</td>
-                                    <td>{{chores.status}}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-success ms-1">Finished</button>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    <th scope="row">{{chores.name}}</th>
-                                    <td>{{chores.description}}</td>
-                                    <td>{{chores.status}}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-success ms-1">Finished</button>
-                                    </td>
-                                    </tr>
+                                    {{/each}}
+                                    
+                                    
                                 </tbody>
                                 </table>
 
