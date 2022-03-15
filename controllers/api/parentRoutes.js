@@ -4,6 +4,7 @@ const { Parent } = require('../../models');
 
 
 // get parent details using the parent_id, assumed authentication done and user has access
+
 router.get('/:id',  async (req, res) => {
   try {
     const parentData = await Parent.findByPk(req.params.id, {
@@ -12,6 +13,25 @@ router.get('/:id',  async (req, res) => {
 
     if (!parentData) {
       res.status(404).json({ message: 'No parent record found with this id!' });
+      return;
+    }
+
+    res.status(200).json(parentData);
+  } 
+  catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/user/:id',  async (req, res) => {
+  try {
+    const parentData = await Parent.findOne({
+      where: {
+        user_id: req.params.id
+    }
+    });
+    if (!parentData) {
+      res.status(404).json({ message: 'No user record found with this User id!' });
       return;
     }
 
