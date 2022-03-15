@@ -16,10 +16,7 @@ Child.belongsTo(Parent, {
     onDelete: 'CASCADE',
 });
 
-
-
 Child.hasMany(Chores, {
-    
     onDelete: 'CASCADE',
 });
 
