@@ -22,81 +22,65 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/parent/:id', async (req, res) => { 
-  const parent = await Parent.findByPk(req.params.id, {
-    include: [
-      {
-        model: Child,
-      },
-      {
-        model: Chores,
-        
-      }
-    ]
-  })
-  // .toJSON();
-  // console.log(child);
+  try {
+    const parentData = await Parent.findByPk(req.params.id, {
+      include: [
+        {
+          model: Child,
+          attributes: ['name'],
+          
+        },
+        // {
+        //   model: Chores,
+        //   attributes: ['name'],
+        // },
+      ],
+    });
 
-  // load them to handlebars
-  res.render('parentTaskpage', {
-    abc: 123,
-    parent: parent,
-    // child: parent.child,
-    // chores: parent.Chores,
-  })  
+    const parent = parentData.get({ plain: true });
+
+    res.render('parentTaskpage', {
+      ...parent,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/child/:id', async (req, res) => {
-  // this route is meant to be visited by a child, not a parent!
-  // validate
-  // 1. make sure user is logged in
-  // try {
 
-  // 2. check user is a parent or a child
-  // 2. [deprecated] make sure parent can only view their own children
-  // if a parent visits this page, redirect the parent to the task managemnt page
+  try {
+    const childData = await Child.findByPk(req.params.id, {
+      include: [
+        {
+          model: Parent,
+          attributes: ['chart'],
+        },
+        {
+          model: Chores,
+          attributes: ['name', 'description', ],
+        }
+      ],
+    });
+console.log (childData)
+    const child = childData.get({ plain: true });
 
-  // 3. if a child is visiting, validate req.param.id === req.user.id
+    res.render('childTaskpage', {
+      ...child,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-  // if(req.params.id !== req.user.id){
-  //   return res.status(301).redirect('/');
-  // }
-
-  
-  // grab the parent info
-  // grab the child info
-  // get all the relevant chors
-  const child = await Child.findByPk(req.params.id, {
-    include: [
-      {
-        model: Parent,
-      },
-      {
-        model: Chores,
-        
-      }
-    ]
-  })
-  // .toJSON();
-  console.log(child);
-
-
-
-  
-
-
-  // load them to handlebars
-  res.render('childTaskpage', {
-    abc: 123,
-    child: child,
-  //  parent: child.parent,
-  //  chores: child.Chores,
-  })  
 // } 
 // catch (err) {
 //   res.status(500).json(err);
 // }
 
-});
+// });
 
 
 router.get('/login', (req, res) => {

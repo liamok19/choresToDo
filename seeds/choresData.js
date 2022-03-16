@@ -6,6 +6,7 @@ const choresData = [
         description: 'Please take out the rubbish', 
         status: 'false',
         NumberofCredits: '1',
+        
 
     },
     {

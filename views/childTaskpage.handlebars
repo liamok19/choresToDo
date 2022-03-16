@@ -1,16 +1,13 @@
     <header>
         <div class="row">
             <div class="col">
-                <h1>{{abc}}</h1>
-                <h1>{{child.name}}{{parent.chart}}</h1>
+                <h1>{{name}}
+                    {{parent.chart}}</h1>
             </div>
         </div>
     </header>  
 <main>
     <div>
-            <div class="col-sm">
-                TEST
-            </div>
             <div>
                 <section class="vh-100" style="background-color: #eee;">
                     <div class="container py-5 h-100">
@@ -19,7 +16,7 @@
                             <div class="card rounded-3">
                             <div class="card-body p-4">
 
-                                <h4 class="text-center my-3 pb-3">{{child.name}}</h4>
+                                <h4 class="text-center my-3 pb-3">{{name}}</h4>
 
                                 <table class="table mb-4">
                                 <thead>
@@ -31,7 +28,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each chores as |chore|}}
+                                    {{#each chores as | chore |}}
                                     <tr>
                                     <th scope="row">{{chore.name}}</th>
                                     <td>{{chore.description}}</td>
