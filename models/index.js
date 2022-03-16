@@ -7,8 +7,9 @@ const Parent = require('./Parent');
 
 
 Parent.hasMany(Child, {
-    // foreignKey: 'child_id',
+    foreignKey: 'parent_id',
     onDelete: 'CASCADE',
+    constraints: false,
 });
 
 Child.belongsTo(Parent, {
@@ -18,12 +19,21 @@ Child.belongsTo(Parent, {
 
 Child.hasMany(Chores, {
     onDelete: 'CASCADE',
+    constraints: false,
+});
+
+Parent.hasMany(Chores, {
+    onDelete: 'CASCADE',
+    constraints: false,
 });
 
 Chores.belongsTo(Child, {
     foreignKey:'child_id',
 });
 
+Chores.belongsTo(Parent, {
+    foreignKey:'parent_id',
+});
 User.hasOne(Parent, {
     foreginKey: 'parent_id', 
     onDelete: 'CASCADE',

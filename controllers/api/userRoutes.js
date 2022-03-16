@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const { request } = require('express');
+const session = require('express-session');
 const { User } = require('../../models');
+const { Child } = require('../../models');
+const { Parent } = require('../../models');
+const { Chores } = require('../../models');
 
 // CREATE a new user
 router.post('/', async (req, res) => {
@@ -69,9 +73,9 @@ router.delete('/:id', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    console.log(req);
+    console.log('userlog route');
     const userData = await User.findOne({ where: { username: req.body.username } });
-    console.log(userData);
+    console.log('userRoutes',userData);
     if (!userData) {
       res
         .status(400)
@@ -90,9 +94,50 @@ router.post('/login', async (req, res) => {
 
     req.session.user_id = userData.id;
     req.session.logged_in = true;
-      
-    res.json({ user: userData, message: 'You are now logged in!' });
-
+    
+    //if parent then fetch /tasks/parent/:id
+    console.log('userRouted data',userData.usertype);
+    console.log('userid', userData.id);
+    if (userData.usertype === "Parent"){
+      console.log("Parent");
+      const parentData = await Parent.findOne({
+        where: {
+          user_id: userData.id
+        }, 
+        include: [
+        { model: Child },
+        { model: Chores},
+        { model: User}
+        ],
+      });
+      if (!parentData) {
+        res.status(404).json({ message: 'No parent record found with this User id!' });
+        return;
+      }
+      // res.json({ user: parentData, message: 'You are now logged in!' });
+      res.status(200).json({ user: parentData });
+    } else {
+     
+      console.log("CHILD");
+      const childData = await Child.findOne({
+        where: {
+          user_id: userData.id
+        }, 
+        include: [
+        { model: Parent },
+        { model: User},
+        { model: Chores }      
+        ],
+      });
+      if (!childData) {
+        res.status(404).json({ message: 'No child record found with this User id!' });
+        return;
+      }
+    // res.json({ user: childData, message: 'You are now logged in!' });
+    
+    res.status(200).json({ user: childData });
+    }  
+   
   } catch (err) {
     res.status(400).json(err.message);
   }

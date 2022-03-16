@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/tasks/parent/:id', async (req, res) => { 
+router.get('/parent/:id', async (req, res) => { 
   const parent = await Parent.findByPk(req.params.id, {
     include: [
       {
@@ -40,12 +40,12 @@ router.get('/tasks/parent/:id', async (req, res) => {
   res.render('parentTaskpage', {
     abc: 123,
     parent: parent,
-    child: parent.child,
-    chores: parent.Chores,
+    // child: parent.child,
+    // chores: parent.Chores,
   })  
 });
 
-router.get('/tasks/child/:id', async (req, res) => {
+router.get('/child/:id', async (req, res) => {
   // this route is meant to be visited by a child, not a parent!
   // validate
   // 1. make sure user is logged in
@@ -88,8 +88,8 @@ router.get('/tasks/child/:id', async (req, res) => {
   res.render('childTaskpage', {
     abc: 123,
     child: child,
-    parent: child.parent,
-    chores: child.Chores,
+  //  parent: child.parent,
+  //  chores: child.Chores,
   })  
 // } 
 // catch (err) {

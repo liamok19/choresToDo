@@ -1,4 +1,5 @@
 // require('dotenv').config({path: './../.env'});
+
 const seedUser = require('./userData');
 const seedParent = require('./parentData');
 const seedChild = require('./childData');
@@ -8,6 +9,13 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
     await sequelize.sync({ force: true });
+
+// const chores = await chores.bulkCreate(choresData);
+
+// for (const { id } of chores) {
+//     const newParent = await parent.create
+// }
+
     console.log('\n----- DATABASE SYNCED -----\n');
     await seedUser();
     console.log('\n----- USER SEEDED -----\n');
