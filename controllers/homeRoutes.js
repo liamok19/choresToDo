@@ -26,16 +26,18 @@ router.get('/parent/:id', async (req, res) => {
     const parentData = await Parent.findByPk(req.params.id, {
       include: [
         {
-          model: Child,
-          // attributes: ['name'],
+          model: Chores ,
+        //   attributes: ['name'],
         },
         {
-          model: Chores,
-        //   attributes: ['name'],
+          model: Child,
+          // attributes: ['name'],
         },
       ]
     })
 
+    console.log(parentData);
+    
     const parent = parentData.get({ plain: true });
 
     res.render('parentTaskpage', {

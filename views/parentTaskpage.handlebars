@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm">
                 <aside>
-                    <h2>Add a child to the Chores List</h2>
+                    <h2>Add a child to the Chores List {{Child.name}} </h2>
                 </aside>
                     <div class="login-card">
                     <h2 class="page-title">Signup</h2>
@@ -44,6 +44,9 @@
                 </div>
             <div>
                 <section class="vh-100" style="background-color: #eee;">
+                    <div>
+                        <a class="no-button" id="logout" href="/">logout</a>
+                    </div>
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-9 col-xl-7">
@@ -95,7 +98,6 @@
                                     {{/each}}                                   
                                 </tbody>
                                 </table>
-
                             </div>
                             </div>
                         </div>
