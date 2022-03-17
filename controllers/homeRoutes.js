@@ -27,13 +27,13 @@ router.get('/parent/:id', async (req, res) => {
       include: [
         {
           model: Child,
-          attributes: ['name'],
+          // attributes: ['name'],
           
         },
-        // {
-        //   model: Chores,
+        {
+          model: Chores,
         //   attributes: ['name'],
-        // },
+        },
       ],
     });
 
