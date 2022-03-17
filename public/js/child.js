@@ -1,12 +1,12 @@
 //check all has values - these must match the handlebars
-async function newChildHandler(event) {
+function newChildHandler(event) {
     event.preventDefault();
-    const name = document.querySelector('#name').value;
-    const creditType = document.querySelector('#creditType').value;
-    const parent_id = document.querySelector('#parent_id').value;
-    const username = document.querySelector('#username').value;
-    const password = document.querySelector('#password').value;
-    const hint = document.querySelector('#hint').value;
+    const name = document.querySelector('#child-name').value;
+    const creditType = document.querySelector('#credit-type').value;
+    const parent_id = document.querySelector('#parent.id').value;
+    const username = document.querySelector('#username-signup').value;
+    const password = document.querySelector('#password-signup').value;
+    const hint = document.querySelector('#hint-signup').value;
     const type = "Child";
     // Send fetch request to add a new child record
  
@@ -46,4 +46,4 @@ async function newChildHandler(event) {
         }
     }
 };
-document.querySelector('.classnameforaddingparentfromLiam').addEventListener('submit', newChildHandler);
+document.querySelector('.signup-form').addEventListener('submit', newChildHandler);
