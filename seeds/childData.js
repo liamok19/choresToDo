@@ -23,7 +23,6 @@ const childData = [
         name: 'Faith',
         TotalCredits: '10',
         creditType: 'stars',
- 
     },
     {
         name: 'Hope',
