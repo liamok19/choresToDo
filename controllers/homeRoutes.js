@@ -28,14 +28,13 @@ router.get('/parent/:id', async (req, res) => {
         {
           model: Child,
           // attributes: ['name'],
-          
         },
         {
           model: Chores,
         //   attributes: ['name'],
         },
-      ],
-    });
+      ]
+    })
 
     const parent = parentData.get({ plain: true });
 
@@ -56,11 +55,10 @@ router.get('/child/:id', async (req, res) => {
           {
             model: Parent,
             // attributes: ['chart'],
-
           }, 
           {
             model: Chores,
-          //   // attributes: ['name', 'description', 'status' ],
+          // attributes: ['name', 'description', 'status' ],
           }, 
       ]
       })
