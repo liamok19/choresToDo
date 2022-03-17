@@ -53,21 +53,27 @@ router.get('/child/:id', async (req, res) => {
   try {
     const childData = await Child.findByPk(req.params.id, {
       include: [
-        {
-          model: Parent,
-          attributes: ['chart'],
-        },
-        {
-          model: Chores,
-          attributes: ['name', 'description', ],
-        }
-      ],
-    });
-console.log (childData)
+          {
+            model: Parent,
+            // attributes: ['chart'],
+
+          }, 
+          {
+            model: Chores,
+          //   // attributes: ['name', 'description', 'status' ],
+          }, 
+      ]
+      })
+console.log (childData);
+
+
     const child = childData.get({ plain: true });
 
     res.render('childTaskpage', {
-      ...child,
+      ...child, 
+      // child: child,
+      // parent: child.parent,
+      // chores: child.Chores,
       logged_in: req.session.logged_in
     });
   } catch (err) {
