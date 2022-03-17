@@ -28,14 +28,14 @@ function newChildHandler(event) {
         const response = await fetch(`/api/child`, {
             method: 'POST',
             body: JSON.stringify({
-              name,
-              TotalCredits,
-              creditType,
-              parent_id,
-              user_id,
+                name,
+                TotalCredits,
+                creditType,
+                parent_id,
+                user_id,
             }),
             headers: {
-              'Content-Type': 'application/json',
+                'Content-Type': 'application/json',
             },
         });
         //if the child  is added, the page will be reloaded

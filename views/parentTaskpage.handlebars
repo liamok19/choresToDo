@@ -1,17 +1,20 @@
+   <div id="pBackground">
     <header>
         <div class="row">
             <div class="col">
+
                 <h1>{{chart}}Family to do Lists</h1>
                 <h1>{{ parent.id }}</h1>
+
             </div>
         </div>
     </header>   
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-sm">
+                <div class="col-sm clsgnup">
                 <aside>
-                    <h2>Add a child to the Chores List</h2>
+                    <h2>Add a child to the Chores List {{Child.name}} </h2>
                 </aside>
                     <div class="login-card">
                     <h2 class="page-title">Signup</h2>
@@ -55,7 +58,10 @@
                 
                 </div>
             <div>
-                <section class="vh-100" style="background-color: #eee;">
+                <section class="vh-100" style="background-color: rgb(73, 72, 72);">
+                    <div>
+                        <a class="no-button" id="logout" href="/">logout</a>
+                    </div>
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-9 col-xl-7">
@@ -107,7 +113,6 @@
                                     {{/each}}                                   
                                 </tbody>
                                 </table>
-
                             </div>
                             </div>
                         </div>
@@ -121,4 +126,6 @@
         </div>
     </main>
 
+
 <script src="./js/"></script>
+
