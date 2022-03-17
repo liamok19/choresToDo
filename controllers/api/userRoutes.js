@@ -7,14 +7,18 @@ const { Parent } = require('../../models');
 const { Chores } = require('../../models');
 
 // CREATE a new user
-router.post('/', async (req, res) => {
+
+router.post('/user', async (req, res) => {
     try {
       const userData = await User.create({
-        username: req.body.username,   //  for parent send parent.email?
+        username: req.body.username,   
         password: req.body.password,
         hint: req.body.hint,
         usertype: req.body.usertype,
       });
+      
+      console.log('userApi data',userData);
+      
       res.status(200).json(userData);
     } catch (err) {
       res.status(400).json(err);
@@ -134,7 +138,7 @@ router.post('/login', async (req, res) => {
         return;
       }
     // res.json({ user: childData, message: 'You are now logged in!' });
-    
+    console.log('childdata',childData);
     res.status(200).json({ user: childData });
     }  
    
