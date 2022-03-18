@@ -43,6 +43,7 @@ User.init(
       // validate: {
       //   len: [6,10],
       // },
+
     },
     hint: {
         type: DataTypes.STRING,

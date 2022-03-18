@@ -12,14 +12,20 @@ const loginFormHandler = async (event) => {
                 headers: { 'Content-Type': 'application/json' },
             })
             .then(function (response) {
-                return response.json()
+                return response.json();
             })
             .then(data => {    
+                console.log('returned data',data);
                 document.location.replace(`/${data ['user']['user']['usertype']}/${data ['user']['id']}`)});
         } else {
             alert('Missing username or password');
         }
     };
+
+    
 document
 .querySelector('.login-form')
 .addEventListener('submit', loginFormHandler);
+
+
+

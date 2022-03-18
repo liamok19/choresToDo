@@ -7,6 +7,7 @@ const { Parent } = require('../../models');
 
 router.get('/:id',  async (req, res) => {
   try {
+  
     const parentData = await Parent.findByPk(req.params.id, {
       
     });
@@ -51,8 +52,9 @@ router.post('/', async (req, res) => {
         chart: req.body.chart,
         user_id: req.body.user_id
       })
-      .then ((parent) => {
-        return res.status(200).json(parent)
+      .then ((parentData) => {
+        console.log('parent api data',parentData);
+        return res.status(200).json(parentData);
         }
     )}
     catch (err) { 
@@ -72,7 +74,7 @@ router.put('/:id', async (req, res) => {
           id: req.params.id
       }
       })
-      .then ((parent) => {
+      .then ((parentData) => {
         
           return res.status(200).json(parentData)
         }
@@ -102,5 +104,40 @@ try {
     res.status(500).json(err);
   }
 });
+
+router.post('/child/', async (req, res) => {
+
+  try {
+
+      const parentData = await Parent.findByPk(req.body.parent_id);
+      if (!parentData) {
+          res.status(404).json({ message: 'Invalid Parent ID' });
+          return;
+      }
+      const userData = await User.findByPk(req.body.user_id);
+      if (!userData) {
+          res.status(404).json({ message: 'Invalid User ID' });
+          return;
+      }
+
+      const childData = await Child.create({
+
+        name: req.body.name,
+        TotalCredits: req.body.TotalCredits,
+        creditType: req.body.creditType,
+        parent_id: req.body.parent_id,
+        user_id: req.body.user_id
+      })
+    .then ((resData) => {
+      console.log(resData)
+      return res.status(200).json(resData)
+      }
+  )}
+  catch (err) { 
+    console.log(err);
+    res.status(400).json(err.message);
+  }
+});
+
 
 module.exports = router;
