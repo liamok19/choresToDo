@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-sm">
                 <aside>
-                    <h2>Add a child to the Chores List {{Child.name}} </h2>
+                    <h2>Add a child to the Chores List </h2>
                 </aside>
                     <div class="login-card">
                     <h2 class="page-title">Signup</h2>
@@ -84,18 +84,20 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                    {{#each Chores as | chore |}}
-                                        <th scope="row">{{Child.name}}</th>
-                                            <td>{{chore.name}}</td>
-                                            <td>{{chore.description}}</td>
-                                            <td>{{chore.status}}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                        <button type="submit" class="btn btn-success ms-1">Finished</button>
-                                    </td>
-                                    </tr>
-                                    <tr>
-                                    {{/each}}                                   
+                            
+
+                                        {{#each Chores as | chore |}}
+                                                <td>{{chore.childName}}</td>
+                                                <td>{{chore.name}}</td>
+                                                <td>{{chore.description}}</td>
+                                                <td>{{chore.status}}</td>
+                                        <td>
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn btn-success ms-1">Finished</button>
+                                        </td>
+                                        </tr>
+                                        {{!-- <tr> --}}
+                                    {{/each}}
                                 </tbody>
                                 </table>
                             </div>
@@ -109,6 +111,7 @@
                 
                 </div>
         </div>
+        
     </main>
 
 
