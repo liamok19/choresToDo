@@ -38,7 +38,7 @@
                                     <td>{{chore.description}}</td>
                                     <td>{{chore.status}}</td>
                                     <td>
-                                        <button type="submit" class="btn btn-success ms-1">Finished</button>
+                                        <button id="finished" type="submit" class="btn btn-success ms-1">Finished</button>
                                     </td>
                                     </tr>
                                     {{/each}}                                   
@@ -54,3 +54,15 @@
             </div>
  </main>
  </div>
+     <script>
+const btnFinished = document.querySelector('.test'); 
+
+    function test(event) {
+        event.preventDefault();
+
+//    document.getElementById("#finished");
+//    console.log(123);
+        btnFinished.style.backgroundColor='#6a0dad'
+    }
+console.log(btnFinished);
+    </script>

@@ -24,7 +24,8 @@ router.get('/', async (req, res) => {
 router.get('/parent/:id', async (req, res) => { 
   try {
     const parentData = await Parent.findByPk(req.params.id, {
-      include: [
+      include:   
+      [
         {
           model: Chores ,
         //   attributes: ['name'],
@@ -34,11 +35,11 @@ router.get('/parent/:id', async (req, res) => {
           // attributes: ['name'],
         },
       ]
-    })
-
-    console.log(parentData);
-    
+    })    
     const parent = parentData.get({ plain: true });
+    // console.log(parent.Children[0].name);
+
+    parent.Chores.forEach(chore => chore.childName = parent.Children[0].name)
 
     res.render('parentTaskpage', {
       ...parent,
@@ -64,7 +65,7 @@ router.get('/child/:id', async (req, res) => {
           }, 
       ]
       })
-console.log (childData);
+// console.log (childData);
 
 
     const child = childData.get({ plain: true });
