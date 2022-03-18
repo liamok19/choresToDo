@@ -8,4 +8,5 @@ router.use('/parent', parentRoutes);
 router.use('/child', childRoutes);
 router.use('/chores', choresRoutes);
 router.use('/user', userRoutes);
+
 module.exports = router;

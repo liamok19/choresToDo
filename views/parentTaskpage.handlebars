@@ -2,10 +2,7 @@
     <header>
         <div class="row">
             <div class="col">
-
-                <h1>{{chart}}Family to do Lists</h1>
-                <h1>{{ parent.id }}</h1>
-
+                <h1>{{ parent.name }}{{chart}}</h1>
             </div>
         </div>
     </header>   
@@ -16,10 +13,11 @@
                 <aside>
                     <h2>Add a child to the Chores List {{Child.name}} </h2>
                 </aside>
-                    <div class="login-card">
-                    <h2 class="page-title">Signup</h2>
-                    <form class="form signup-form">
+                    <div class="child-login-card" id="child-login-card">
+                    <h2 class="page-title">Add a Child</h2>
+                    <form class="form child-signup-form" id="child-signup-form">
                         <div class="form-group">
+                            <label for="username-signup">Username:</label>
                             <label for="username-signup">Username:</label>
                             <input class="form-input" type="text" id="username-signup" />
                         </div>
@@ -40,9 +38,12 @@
                             <input class="form-input" type="hint" id="credit-type" />
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary Add">Add</button>
+                            <button type="submit" class="btn btn-primary" id="childSave">Save</button>
                         </div>
                     </form>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary" id="childAdd">Add</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,5 +128,5 @@
     </main>
 
 
-<script src="./js/"></script>
+
 

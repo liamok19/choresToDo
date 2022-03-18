@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { request } = require('express');
+const { User } = require('../../models');
+const { Child } = require('../../models');
 const { Parent } = require('../../models');
+const { Chores } = require('../../models');
 
 
 // get parent details using the parent_id, assumed authentication done and user has access
