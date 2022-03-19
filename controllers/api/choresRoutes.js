@@ -110,4 +110,43 @@ router.post('/', async (req, res) => {
   }
 );
 
+
+router.patch('/:id', async (req, res) => {
+    
+  try {
+
+    const childData = await Child.findByPk(req.body.idChild);
+    if (!childData) {
+      res.status(404).json({ message: 'Invalid Child ID!' });
+      return;
+    };
+
+    const parentData = await Parent.findByPk(req.body.idParent);
+    if (!parentData) {
+      res.status(404).json({ message: 'Invalid Parent ID!' });
+      return;
+    };
+
+    try {
+      const choresData = await Chores.update(req.body.fields, {
+        ...req.body.fields,      
+        where: {
+          id: req.params.id,
+          parent_id: req.body.idParent,
+          child_id: req.body.idChild,
+        }
+      })
+      res.status(200).json(choresData);
+    } catch (e) {
+      res.status(500).json(e);
+      console.error(e);
+    }
+
+  } catch (err) {
+      res.status(500).json(err);
+  }
+}
+);
+
+
 module.exports = router;

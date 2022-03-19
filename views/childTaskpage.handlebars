@@ -12,7 +12,7 @@
             <div>
                 <section class="vh-100" style="background-color: #2d85de;">
                     <div>
-                        <a class="no-button" id="logout" href="/">logout</a>
+                        <a class="no-button" id="logout" href="#">logout</a>
                     </div>
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -36,9 +36,22 @@
                                     <tr>
                                     <th scope="row">{{chore.name}}</th>
                                     <td>{{chore.description}}</td>
-                                    <td>{{chore.status}}</td>
+                                    <td id="finished-{{chore.id}}" 
+                                        type="submit" 
+                                        class="ms-1">
+                                        
+                                        {{#if chore.status}}
+                                            checked
+                                        {{else}}
+                                            unchecked
+                                        {{/if}}
+                                    </td>
                                     <td>
-                                        <button id="finished" type="submit" class="btn btn-success ms-1">Finished</button>
+                                        <button type="submit" class="btn btn-finish btn-success ms-1" 
+                                        data-id="{{chore.id}}" 
+                                        data-childid="{{../id}}"
+                                        data-parentid="{{../parent.id}}"
+                                        >Finished</button>
                                     </td>
                                     </tr>
                                     {{/each}}                                   
@@ -54,15 +67,6 @@
             </div>
  </main>
  </div>
-     <script>
-const btnFinished = document.querySelector('.test'); 
-
-    function test(event) {
-        event.preventDefault();
-
-//    document.getElementById("#finished");
-//    console.log(123);
-        btnFinished.style.backgroundColor='#6a0dad'
-    }
-console.log(btnFinished);
+    <script 
+    src="/js/button.js">
     </script>

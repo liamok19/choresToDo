@@ -60,7 +60,7 @@
             <div>
                 <section class="vh-100" style="background-color: rgb(73, 72, 72);">
                     <div>
-                        <a class="no-button" id="logout" href="/">logout</a>
+                        <a class="no-button" id="logout" href="#">logout</a>
                     </div>
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -105,10 +105,22 @@
                                                 <td>{{chore.childName}}</td>
                                                 <td>{{chore.name}}</td>
                                                 <td>{{chore.description}}</td>
-                                                <td>{{chore.status}}</td>
-                                        <td>
+                                                <td id="finished-{{chore.id}}" 
+                                                    type="submit" 
+                                                    class="ms-1">
+                                                    {{#if chore.status}}
+                                                        checked
+                                                    {{else}}
+                                                        unchecked
+                                                    {{/if}}
+                                                </td>
+                                                <td>
                                             <button type="submit" class="btn btn-danger">Delete</button>
-                                            <button type="submit" class="btn btn-success ms-1">Finished</button>
+                                            <button type="submit" class="btn btn-finish btn-success ms-1"
+                                                data-id="{{chore.id}}" 
+                                                data-childid="{{chore.child_id}}"
+                                                data-parentid="{{../id}}"
+                                            >Finished</button>
                                         </td>
                                         </tr>
                                         {{!-- <tr> --}}
@@ -128,7 +140,6 @@
         </div>
         
     </main>
-
-
-<script src="./js/"></script>
-
+    <script 
+    src="/js/button.js">
+    </script>
