@@ -2,8 +2,15 @@
     <header>
         <div class="row">
             <div class="col">
+
                 <h1 > Hello {{ name }} - {{chart}}</h1>
+
             </div>
+        </div>
+        <div>
+            <button class="logoutbtnParent">
+                <a class="no-button lgtParent" id="logout" href="#">Logout</a>
+            </button>
         </div>
     </header>   
     <main>
@@ -24,6 +31,7 @@
                             <label for="child-parent-id">ParentID:</label>
                             <input value = {{ id }} class="form-input" type="text" id="child-parent-id" />
                         </div>
+
                         <div class="form-group">
                             <label for="username-signup">Username:</label>
                             <input class="form-input" type="text" id="username-signup" />
@@ -68,10 +76,7 @@
                 
                 </div>
             <div>
-                <section class="vh-100" style="background-color: rgb(73, 72, 72);">
-                    <div>
-                        <a class="no-button" id="logout" href="#">logout</a>
-                    </div>
+                <section class="vh-50">
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-9 col-xl-7">
