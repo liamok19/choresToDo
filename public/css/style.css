@@ -8,13 +8,14 @@
     background-color: rgb(116, 116, 116);
 }
 #cBackground {
-    background-color: #2d85de;
+    background-color: #627e9b;
+    background: linear-gradient(#627e9b, #43487e);
 }
 
 #mh1 {
     font-size: 75px;
     font-weight:900;
-    color:#e29eb5;
+    color:#ffffff;
     border: 3px solid #538e73ba;
     background-color:  #555;
     border-bottom-left-radius: 25px;
@@ -22,7 +23,7 @@
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(100, 24, 24, 0.795);
+    text-shadow: 3px 3px #d48011d7;
     margin: auto;
     
     /* text-decoration: underline; */
@@ -43,19 +44,20 @@
     text-decoration: underline;
 }
 #ch1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-family: 'Fredericka the Great', cursive; ;
+    font-size: 75px;
     font-weight:900;
-    color: #ff0800;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: rgb(225, 255, 93);
-    border-radius:  25px;
+    color: #FFAD60;
+    border: 5px solid #FFEEAD;
+    background-color: #96CEB4;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px #D9534F;
     margin: auto;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 h2{
     text-align: center;
@@ -115,6 +117,15 @@ header {
     flex-wrap: wrap;
 }
 
+.logoutbtn {
+    color: #FFAD60;
+    background-color: #96CEB4;
+    border: 2px solid #D9534F;
+    position: relative;
+    margin-top: 2vh;
+    margin-left: 70%;
+}
+
 .form {
     display: flex;
     align-items: flex-end;
@@ -142,9 +153,10 @@ header {
 }
 
 .btn-primary {
-    background-color: #e29eb5;
+    background-color: #d48011d7;
     border-color: rgba(100, 24, 24, 0.795);
     display: block;
+    font-weight: bolder;
 }
 
 #signup{
@@ -160,8 +172,8 @@ header {
 }
 
 .img-homepage {
-    width: 50%;
-    height: 50%;
+    width: 15vw;
+    height: 15vw;
     position: static;
     /* padding-right: 75vw;
     padding-bottom: 50vh; */
@@ -169,4 +181,20 @@ header {
 .choresImages{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-top: 10vh;
 }
+
+/* //child Page styling Details */
+.card-body {
+    background-color: #96CEB4;
+}
+
+h4{
+    font-size: 50px;
+    font-weight:900;
+    color: #627e9b;
+    font-family: 'Fredericka the Great', cursive;
+    text-shadow: 3px 3px #FFAD60;
+}
+
