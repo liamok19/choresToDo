@@ -160,9 +160,13 @@ header {
 }
 
 .img-homepage {
-    max-width: 50%;
-    max-height: 50%;
+    width: 50%;
+    height: 50%;
     position: static;
     /* padding-right: 75vw;
     padding-bottom: 50vh; */
+}
+.choresImages{
+    display: flex;
+    flex-direction: row;
 }
