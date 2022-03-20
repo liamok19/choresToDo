@@ -7,16 +7,16 @@
             <div 
                 class="col-md-auto">
             </div>
-            <div class="col col-lg-2">
-            </div>
+            {{!-- <div class="col col-lg-2">
+            </div> --}}
         </div>
     </header>
     {{!-- <nav>
         <a href="/">TEST</a>
     </nav> --}}
-    <main>
+    <main class="container homepagelayout">
         <div class="row loginDets justify-space-between-md">
-            <div>
+            <div class="col">
                 {{!-- <aside>
                     <h2>Login</h2>
                 </aside> --}}
@@ -40,14 +40,14 @@
                         </div>
                     </div>
             </div>
-            <div>
+            <div class="col">
                 {{!-- <aside>
                     <h2>Signup</h2>
                 </aside> --}}
                     {{!-- <div class="login">
                     {{{body}}} --}}
                         <div class="login-card">
-                        <h2 class="page-title">Signup</h2>
+                        <h2 class="page-title signup_pgt">Signup</h2>
                         <form class="form signup-form">
                             <div class="form-group">
                                 <label for="username-signup">Name:</label>
@@ -82,6 +82,5 @@
             </div>
         </div>
     </main>
-
     <script src="/js/login.js" ></script>
     <script src="/js/parent.js" ></script>
