@@ -2,11 +2,14 @@
     <header>
         <div class="row">
             <div class="col">
-
-                <h1>{{chart}}Family to do Lists</h1>
+                <h1 id="ph1">{{chart}}</h1>
                 <h1>{{ parent.id }}</h1>
-
             </div>
+        </div>
+        <div>
+            <button class="logoutbtnParent">
+                <a class="no-button lgtParent" id="logout" href="#">Logout</a>
+            </button>
         </div>
     </header>   
     <main>
@@ -14,10 +17,10 @@
             <div class="row">
                 <div class="col-sm clsgnup">
                 <aside>
-                    <h2>Add a child to the Chores List </h2>
+                    <h2 class="childAdd">Add a Child to the Chores List </h2>
                 </aside>
-                    <div class="login-card">
-                    <h2 class="page-title">Signup</h2>
+                    <div class="login-card childsignup">
+                    <h2 class="page-title childAdd">Signup</h2>
                     <form class="form signup-form">
                         <div class="form-group">
                             <label for="username-signup">Username:</label>
@@ -58,10 +61,7 @@
                 
                 </div>
             <div>
-                <section class="vh-100" style="background-color: rgb(73, 72, 72);">
-                    <div>
-                        <a class="no-button" id="logout" href="#">logout</a>
-                    </div>
+                <section class="vh-50">
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-9 col-xl-7">

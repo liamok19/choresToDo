@@ -5,7 +5,7 @@
 
 }
 #pBackground {
-    background-color: rgb(116, 116, 116);
+    background-color: #cccccc;
 }
 #cBackground {
     background-color: #627e9b;
@@ -29,19 +29,19 @@
     /* text-decoration: underline; */
 }
 #ph1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-family: 'Fredericka the Great', cursive; ;
+    font-size: 75px;
     font-weight:900;
-    color: #f1f1f1;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: rgb(27, 27, 27);
-    border-radius:  25px;
+    color:#ffffff;
+    border: 3px solid #538e73ba;
+    background-color: rgb(65, 65, 65);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px #d48011d7;
     margin: auto;
-    text-decoration: underline;
 }
 #ch1 {
     font-family: 'Fredericka the Great', cursive; ;
@@ -100,7 +100,7 @@ header {
 .clsgnup {
     font-family: 'Short Stack', cursive;
     margin: auto;
-    padding: 5%;
+    /* padding: 5%; */
     border: 8px;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.637);
@@ -198,3 +198,31 @@ h4{
     text-shadow: 3px 3px #FFAD60;
 }
 
+/* PARENT details for extra styling */
+.childAdd {
+    font-family: 'Fredericka the Great', cursive;
+    color: #555;    
+    /* justify-content: center; */
+}
+
+.Add {
+    margin: auto;
+}
+.childsignup{
+    justify-content: center;
+}
+.logoutbtnParent{
+    background-color: rgba(65, 65, 65, 0.733);
+    border: 2px solid #FFAD60;
+    position: relative;
+    margin-top: 2vh;
+    margin-left: 70%;
+}
+
+.lgtParent{
+    color: #ffffff;
+
+}
+.row{
+    align-items: flex-start;
+}
