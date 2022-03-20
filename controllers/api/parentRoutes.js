@@ -52,11 +52,12 @@ router.post('/', async (req, res) => {
         chart: req.body.chart,
         user_id: req.body.user_id
       })
-      .then ((parentData) => {
+      // .then ((parentData) => {
         console.log('parent api data',parentData);
         return res.status(200).json(parentData);
-        }
-    )}
+        // }
+    // )
+  }
     catch (err) { 
       console.log(err);
       res.status(400).json(err);

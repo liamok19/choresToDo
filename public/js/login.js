@@ -1,5 +1,5 @@
 window.onload = function() {
-        document.getElementById(`signup-form`).style.visibility = `hidden`;
+        document.getElementById(`signup-form`).style.display = `none`;
     };
 
 const loginFormHandler = async (event) => {
@@ -84,8 +84,8 @@ const loginFormHandler = async (event) => {
     
     const showSignUpForm = async (event) => {
         event.preventDefault();
-        document.getElementById(`signup-form`).style.visibility = "visible";
-        document.querySelector('#signup').style.visibility = "hidden";
+        document.getElementById(`signup-form`).style.display = null;
+        document.querySelector('#signup').style.display = "none";
     };
 document
 .querySelector('.login-form')
