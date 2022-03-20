@@ -1,6 +1,10 @@
 
 #background {
     background-color: #1ecae1;
+    background-image: url("main_page_bg.jpg");
+    background-repeat: no-repeat, repeat;
+    background-color: #cccccc;
+
 }
 #pBackground {
     background-color: rgb(116, 116, 116);
@@ -11,16 +15,16 @@
 
 #mh1 {
     font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-size: 250%;
     font-weight:900;
-    color: #D0392F;
+    color:#e29eb5;
     border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: aquamarine;
+    background-color:  rgba(127, 255, 212, 0.637);
     border-radius:  25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px rgba(100, 24, 24, 0.795);
     margin: auto;
     text-decoration: underline;
 }
@@ -86,10 +90,11 @@ main {
     position: sticky;
 }
 
-.loginDets{
-    color: #e6e659;
-    text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.342);
-}
+/* .loginDets{
+    padding-top: 50px ;
+    color: rgba(127, 255, 212, 0.637);
+    text-shadow: 0.5px 0.5px rgba(68, 134, 112, 0.637);
+} */
 
 .clsgnup {
     font-family: 'Short Stack', cursive;
@@ -100,3 +105,42 @@ main {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.637);
 }
 
+.login-card {
+    padding-top: 50px ;
+    color: rgba(0, 0, 0, 0.637);
+    text-shadow: 0.5px 0.5px rgba(68, 134, 112, 0.637);
+}
+
+.homepagelayout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    
+}
+.page-title{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.signup-form {
+    padding-right: 100px;
+}
+
+.login-form {
+    padding-left: 100px;
+
+}
+.signup_pgt {
+    padding-right: 100px;
+
+}
+
+.btn-primary {
+    background-color: #e29eb5;
+    border-color: rgba(100, 24, 24, 0.795);
+}
