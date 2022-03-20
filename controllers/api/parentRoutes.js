@@ -42,29 +42,30 @@ router.get('/user/:id',  async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get('/', async (req,res) => {
-  console.log('string for fun' )
-  res.end();
-})
+// router.get('/', async (req,res) => {
+//   console.log('string for fun' )
+//   res.end();
+// })
+
 router.post('/', async (req, res) => {
-  console.log(req.body)
-  //   try {
-  //     const parentData = await Parent.create({
-  //       name: req.body.name,
-  //       email: req.body.email,
-  //       chart: req.body.chart,
-  //       user_id: req.body.user_id
-  //     })
-  //     // .then ((parentData) => {
-  //       console.log('parent api data',parentData);
-  //       return res.status(200).json(parentData);
-  //       // }
-  //   // )
-  // }
-  //   catch (err) { 
-  //     console.log(err);
-  //     res.status(400).json(err);
-  //   }
+  // console.log(req.body)
+    try {
+      const parentData = await Parent.create({
+        name: req.body.name,
+        email: req.body.email,
+        chart: req.body.chart,
+        user_id: req.body.user_id
+      })
+      // .then ((parentData) => {
+        console.log('parent api data',parentData);
+        return res.status(200).json(parentData);
+        // }
+    // )
+  }
+    catch (err) { 
+      console.log(err);
+      res.status(400).json(err);
+    }
 });
 
 

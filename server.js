@@ -34,7 +34,7 @@ app.use(session(sess));
 
 app.use([
     '/api/chores*',
-    '/api/parent*',
+    // '/api/parent*',
     '/api/child*',
 ], (req, res, next) => {
     if (!req?.session?.logged_in) {
