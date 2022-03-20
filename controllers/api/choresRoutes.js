@@ -63,10 +63,10 @@ router.post('/', async (req, res) => {
       };
     
       const choresData = await Chores.create({
-        name: req.body.name,
-        description: req.body.description,
-        status: req.body.status,
-        NumberofCredits: req.body.NumberofCredits,
+        name: req.body.taskname,
+        description: req.body.taskdesc,
+        status: req.body.taskstatus,
+        NumberofCredits: req.body.noCredits,
         parent_id: req.body.parent_id,
         child_id: req.body.child_id
         })

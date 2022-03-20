@@ -2,21 +2,16 @@ const router = require('express').Router();
 const { request } = require('express');
 const { Child, Parent, User } = require('../../models');
 
-
 // get parent details using the parent_id, assumed authentication done and user has access
 
 router.get('/:id',  async (req, res) => {
   try {
-  
     const parentData = await Parent.findByPk(req.params.id, {
-      
     });
-
     if (!parentData) {
       res.status(404).json({ message: 'No parent record found with this id!' });
       return;
     }
-
     res.status(200).json(parentData);
   } 
   catch (err) {
@@ -35,17 +30,12 @@ router.get('/user/:id',  async (req, res) => {
       res.status(404).json({ message: 'No user record found with this User id!' });
       return;
     }
-
     res.status(200).json(parentData);
   } 
   catch (err) {
     res.status(500).json(err);
   }
 });
-// router.get('/', async (req,res) => {
-//   console.log('string for fun' )
-//   res.end();
-// })
 
 router.post('/', async (req, res) => {
   // console.log(req.body)
@@ -63,7 +53,6 @@ router.post('/', async (req, res) => {
       res.status(400).json(err);
     }
 });
-
 
 router.put('/:id', async (req, res) => {
     try {
@@ -122,7 +111,6 @@ router.post('/child/', async (req, res) => {
       }
 
       const childData = await Child.create({
-
         name: req.body.name,
         TotalCredits: req.body.TotalCredits,
         creditType: req.body.creditType,
@@ -139,6 +127,5 @@ router.post('/child/', async (req, res) => {
     res.status(400).json(err.message);
   }
 });
-
 
 module.exports = router;

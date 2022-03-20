@@ -4,8 +4,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 window.onload = function() {
     if (window.location.href.includes('Parent')) {
-        console.log('hide form');
         document.querySelector(".child-signup-form").style.display = `none`;
+        document.querySelector("#add-task-form").style.display = `none`;
     };
 };
 
@@ -67,12 +67,69 @@ function newChildHandler(event) {
     })
 };
 
+function newTaskHandler(event) {
+    event.preventDefault();
+    const taskname = document.querySelector("#form1").value;
+    const taskdesc = document.querySelector("#form2").value;
+    const noCredits = document.querySelector("#form3").value;
+    const parent_id = document.querySelector("#child-parent-id").value;
+    const childName = document.querySelector("#form4").value;
+    let taskstatus = false;
+
+    let childURL = "/api/child/" + childName + "/" + parent_id;
+    const childData = fetch(childURL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+    .then(function (response) {
+        return response.json();
+    })
+    .then(data => { 
+        let child_id = data [0]['id'];
+        fetch('/api/chores/', {
+            method: 'POST',
+            body: JSON.stringify({
+                taskname,
+                taskdesc,
+                taskstatus,
+                noCredits,
+                parent_id,
+                child_id
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(function(response) {
+            if (response.ok) {
+                alert('Task created successfully');
+                document.location.reload();
+            } else {
+                alert('Failed to add Task');
+            }
+        })
+        .catch((err) => {
+            alert('Failed to add Task');
+        })
+    })
+};
+
 const showChildForm = async (event) => {
     event.preventDefault();
-    console.log(`on load of parent`);
     document.querySelector(".child-signup-form").style.display = null;
     document.querySelector("#childAdd").style.display = "none";
 };
 
+const showTaskForm = async (event) => {
+    event.preventDefault();
+    document.querySelector("#add-task-form").style.display = null;
+    document.querySelector("#addTask").style.display = "none";
+};
+
+
 document.querySelector("#childSave").addEventListener("click",newChildHandler);
 document.querySelector("#childAdd").addEventListener("click",showChildForm);
+document.querySelector("#addTask").addEventListener("click",showTaskForm);
+document.querySelector("#saveTask").addEventListener("click",newTaskHandler);
