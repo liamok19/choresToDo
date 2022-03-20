@@ -57,7 +57,7 @@ const loginFormHandler = async (event) => {
                 console.log('response from user api ok',user.id);
                 let user_id = data ['id'];
                 console.log('user-id',user_id);
-                const response = fetch(`/api/parent`, {
+                fetch(`/api/parent`, {
                     method: 'POST',
                     body: JSON.stringify({
                     name,
