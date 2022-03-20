@@ -32,18 +32,20 @@ const sess = {
 
 app.use(session(sess));
 
-app.use([
-    '/api/chores*',
-    // '/api/parent*',
-    '/api/child*',
-], (req, res, next) => {
-    if (!req?.session?.logged_in) {
-        next(401);
-        return;
-    }
-    console.log('session',req.session);
-    next();
-})
+//more select loggign in checks to be in routes.
+// app.use([
+//     '/api/chores*',
+//     // '/api/parent*',
+//     '/api/child*',
+// ], (req, res, next) => {
+//     if (!req?.session?.logged_in) {
+//         next(401);
+//         return;
+//     }
+//     console.log('session',req.session);
+//     next();
+// })
+
 // // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
