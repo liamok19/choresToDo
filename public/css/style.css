@@ -1,58 +1,63 @@
 
 #background {
-    background-color: #1ecae1;
+    background-color: #cccccc;
+    padding-bottom: 30vh;
+
 }
 #pBackground {
-    background-color: rgb(116, 116, 116);
+    background-color: #cccccc;
 }
 #cBackground {
-    background-color: #2d85de;
+    background-color: #627e9b;
+    background: linear-gradient(#627e9b, #43487e);
 }
 
 #mh1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-size: 75px;
     font-weight:900;
-    color: #D0392F;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: aquamarine;
-    border-radius:  25px;
+    color:#ffffff;
+    border: 3px solid #538e73ba;
+    background-color:  #555;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px #d48011d7;
     margin: auto;
-    text-decoration: underline;
+    
+    /* text-decoration: underline; */
 }
 #ph1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-family: 'Fredericka the Great', cursive; ;
+    font-size: 75px;
     font-weight:900;
-    color: #f1f1f1;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: rgb(27, 27, 27);
-    border-radius:  25px;
+    color:#ffffff;
+    border: 3px solid #538e73ba;
+    background-color: rgb(65, 65, 65);
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px #d48011d7;
     margin: auto;
-    text-decoration: underline;
 }
 #ch1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 500%;
+    font-family: 'Fredericka the Great', cursive; ;
+    font-size: 75px;
     font-weight:900;
-    color: #ff0800;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color: rgb(225, 255, 93);
-    border-radius:  25px;
+    color: #FFAD60;
+    border: 5px solid #FFEEAD;
+    background-color: #96CEB4;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
-    text-shadow: 3px 3px rgba(0, 0, 0, 0.171);
+    text-shadow: 3px 3px #D9534F;
     margin: auto;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 h2{
     text-align: center;
@@ -66,10 +71,10 @@ header {
     font-family: 'Short Stack', cursive;
     text-align: center;
 }
-main {
-    text-align: center;
-    font-family: 'Short Stack', cursive;
-}
+/* main {
+    /* text-align: center; */
+    /* font-family: 'Short Stack', cursive; */
+/* } */
 
 .loginbtn {
     color: rgb(218, 218, 218);
@@ -86,17 +91,138 @@ main {
     position: sticky;
 }
 
-.loginDets{
-    color: #e6e659;
-    text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.342);
-}
+/* .loginDets{
+    padding-top: 50px ;
+    color: rgba(127, 255, 212, 0.637);
+    text-shadow: 0.5px 0.5px rgba(68, 134, 112, 0.637);
+} */
 
 .clsgnup {
     font-family: 'Short Stack', cursive;
     margin: auto;
-    padding: 5%;
+    /* padding: 5%; */
     border: 8px;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px rgba(0, 0, 0, 0.637);
 }
 
+.login-card {
+    padding-top: 50px ;
+    color: rgba(0, 0, 0, 0.637);
+    text-shadow: 0.5px 0.5px rgba(68, 134, 112, 0.637);
+}
+
+.homepagelayout {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.logoutbtn {
+    color: #FFAD60;
+    background-color: #96CEB4;
+    border: 2px solid #D9534F;
+    position: relative;
+    margin-top: 2vh;
+    margin-left: 70%;
+}
+
+.form {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    
+}
+.page-title{
+    display: flex;
+    flex-direction: row;
+    padding-left: 18vw;
+}
+
+.signup-form {
+    padding-right: 25vw;
+}
+
+.login-form {
+    padding-left: 100px;
+    padding-top:5vh ;
+
+}
+.signup_pgt {
+    padding-right: 100px;
+
+}
+
+.btn-primary {
+    background-color: #d48011d7;
+    border-color: rgba(100, 24, 24, 0.795);
+    display: block;
+    font-weight: bolder;
+}
+
+#signup{
+    margin-left: 18vw;
+    margin-top: 5vh;
+
+}
+#mh1 {
+    font-family: 'Fredericka the Great', cursive;
+}
+.square {
+    border: double #cccccc 10px;
+}
+
+.img-homepage {
+    width: 15vw;
+    height: 15vw;
+    position: static;
+    /* padding-right: 75vw;
+    padding-bottom: 50vh; */
+}
+.choresImages{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+/* //child Page styling Details */
+.card-body {
+    background-color: #96CEB4;
+}
+
+h4{
+    font-size: 50px;
+    font-weight:900;
+    color: #627e9b;
+    font-family: 'Fredericka the Great', cursive;
+    text-shadow: 3px 3px #FFAD60;
+}
+
+/* PARENT details for extra styling */
+.childAdd {
+    font-family: 'Fredericka the Great', cursive;
+    color: #555;    
+    /* justify-content: center; */
+}
+
+.Add {
+    margin: auto;
+}
+.childsignup{
+    justify-content: center;
+}
+.logoutbtnParent{
+    background-color: rgba(65, 65, 65, 0.733);
+    border: 2px solid #FFAD60;
+    position: relative;
+    margin-top: 2vh;
+    margin-left: 70%;
+}
+
+.lgtParent{
+    color: #ffffff;
+
+}
+.row{
+    align-items: flex-start;
+}

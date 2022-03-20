@@ -1,53 +1,53 @@
-   <div id="background">
+<div id="background">
     <header>
         <div class="row">
-            <div class="col">
-                <h1 id="mh1">Chores to Do</h1>
+            <div class="col square">
+                <h1  id="mh1">Chores to Do</h1>
             </div>
             <div 
                 class="col-md-auto">
             </div>
-            <div class="col col-lg-2">
-            </div>
+            {{!-- <div class="col col-lg-2">
+            </div> --}}
         </div>
     </header>
     {{!-- <nav>
         <a href="/">TEST</a>
     </nav> --}}
-    <main>
+    <main class="container homepagelayout">
         <div class="row loginDets justify-space-between-md">
-            <div>
+            <div class="col">
                 {{!-- <aside>
                     <h2>Login</h2>
                 </aside> --}}
                     {{!-- <div class="login">
                     {{{body}}} --}}
-                        <div class="login-card">
-                            <h2 class="page-title">Login</h2>
-                                <form class="form login-form">
-                                    <div class="form-group">
-                                        <label for="username-login">Username:</label>
-                                        <input class="form-input" type="text" id="username-login" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password-login">Password:</label>
-                                        <input class="form-input" type="password" id="password-login" />
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-primary" type="submit">login</button>
-                                    </div>
-                                </form>
-                        </div>
+                    <div class="login-card">
+                        <h2 class="page-title">Login</h2>
+                            <form class="form login-form">
+                                <div class="form-group">
+                                    <label for="username-login">Username:</label>
+                                    <input class="form-input" type="text" id="username-login" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password-login">Password:</label>
+                                    <input class="form-input" type="password" id="password-login" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">Login</button>
+                                </div>
+                            </form>
                     </div>
+                {{!-- </div> --}}
             </div>
-            <div>
+            <div class="col">
                 {{!-- <aside>
                     <h2>Signup</h2>
                 </aside> --}}
                     {{!-- <div class="login">
                     {{{body}}} --}}
                         <div class="login-card">
-                        <h2 class="page-title">Sign up?</h2>
+                        <h2 class="page-title">Sign up</h2>
                             <div class="form-group">
                                 <button class="btn btn-primary" type="submit" id="signup">Register</button>
                             </div>
@@ -82,9 +82,34 @@
                         </form>
                         </div>
                 </div>
-            </div>
+                <div class="choresImages">
+                    <picture>
+                        <source srcset="/images/main_page_bg01.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg01.png" 
+                            class=" img-homepage" 
+                            alt="cleaning_chores">
+                    </picture>
+                    <picture>
+                        <source srcset="/images/main_page_bg02.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg02.png" 
+                            class=" img-homepage" 
+                            alt="bin_chores">
+                    </picture>
+                    <picture>
+                        <source srcset="/images/main_page_bg03.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg03.png" 
+                            class=" img-homepage" 
+                            alt="bin_chores">
+                    </picture>
+                    <picture>
+                        <source srcset="/images/main_page_bg04.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg04.png" 
+                            class=" img-homepage" 
+                            alt="bin_chores">
+                    </picture>
+                </div>
+            </div>                 
         </div>
     </main>
-
     <script src="/js/login.js" ></script>
     <script src="/js/parent.js" ></script>

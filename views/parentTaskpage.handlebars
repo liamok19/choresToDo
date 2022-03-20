@@ -2,8 +2,15 @@
     <header>
         <div class="row">
             <div class="col">
+
                 <h1 > Hello {{ name }} - {{chart}}</h1>
+
             </div>
+        </div>
+        <div>
+            <button class="logoutbtnParent">
+                <a class="no-button lgtParent" id="logout" href="#">Logout</a>
+            </button>
         </div>
     </header>   
     <main>
@@ -24,6 +31,7 @@
                             <label for="child-parent-id">ParentID:</label>
                             <input value = {{ id }} class="form-input" type="text" id="child-parent-id" />
                         </div>
+
                         <div class="form-group">
                             <label for="username-signup">Username:</label>
                             <input class="form-input" type="text" id="username-signup" />
@@ -68,10 +76,7 @@
                 
                 </div>
             <div>
-                <section class="vh-100" style="background-color: rgb(73, 72, 72);">
-                    <div>
-                        <a class="no-button" id="logout" href="#">logout</a>
-                    </div>
+                <section class="vh-50">
                     <div class="container py-5 h-100">
                         <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-lg-9 col-xl-7">
@@ -79,21 +84,30 @@
                             <div class="card-body p-4">
 
                                 <h4 class="text-center my-3 pb-3">To Do App</h4>
-
-                                <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-warning" id="addTask">Add task</button>
+                                </div>
+                                <form class="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" id="add-task-form">
                                 <div class="col-12">
                                     <div class="form-outline">
                                     <input type="text" id="form1" class="form-control" />
                                     <label class="form-label" for="form1">Enter a task here</label>
                                     </div>
+                                    <div class="form-outline">
+                                    <input type="text" id="form2" class="form-control" />
+                                    <label class="form-label" for="form2">Describe the task</label>
+                                    </div>
+                                    <div class="form-outline">
+                                    <input type="number" id="form3" class="form-control" />
+                                    <label class="form-label" for="form3">How much is the award worth?</label>
+                                    </div>
+                                    <div class="form-outline">
+                                    <input type="text" id="form4" class="form-control" />
+                                    <label class="form-label" for="form4">Child name task is assigned too</label>
+                                    </div>
+                                    <div class="col-12">
+                                    <button type="submit" class="btn btn-primary" id="saveTask">Save</button>
                                 </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-warning">Get tasks</button>
                                 </div>
                                 </form>
 
