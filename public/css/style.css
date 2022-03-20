@@ -59,10 +59,10 @@
     margin: auto;
     /* text-decoration: underline; */
 }
-h2{
+/* h2{
     text-align: center;
     
-}
+} */
 #wrapper {
     width: 95%;
 }
@@ -205,9 +205,6 @@ h4{
     /* justify-content: center; */
 }
 
-.Add {
-    margin: auto;
-}
 .childsignup{
     justify-content: center;
 }
@@ -225,4 +222,13 @@ h4{
 }
 .row{
     align-items: flex-start;
+}
+
+.formParent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
