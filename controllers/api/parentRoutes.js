@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { request } = require('express');
-const { Parent } = require('../../models');
+const { Child, Parent, User } = require('../../models');
 
 
 // get parent details using the parent_id, assumed authentication done and user has access
@@ -53,7 +53,7 @@ router.post('/', async (req, res) => {
         user_id: req.body.user_id
       })
       .then ((parentData) => {
-        console.log('parent api data',parentData);
+
         return res.status(200).json(parentData);
         }
     )}

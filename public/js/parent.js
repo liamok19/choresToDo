@@ -1,14 +1,26 @@
-//check all has values - these must match the handlebars
-async function newParentHandler(event) {
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+});
+
+window.onload = function() {
+    if (window.location.href.includes('Parent')) {
+        console.log('hide form');
+        document.querySelector(".child-signup-form").style.display = `none`;
+    };
+};
+
+function newChildHandler(event) {
     event.preventDefault();
-    const name = document.querySelector('#name-signup').value;
-    const email = document.querySelector('#email-signup').value;
-    const chart = document.querySelector('#chartname-signup').value;
-    const username = document.querySelector('#username-signup').value;
-    const password = document.querySelector('#password-signup').value;
-    const hint = document.querySelector('#hint-signup').value;
-    const usertype = "Parent";
-    // Send fetch request to add a new parent
+    const name = document.querySelector("#child-name").value;
+    const credit_type = document.querySelector("#credit-type").value;
+    const total_credits = document.querySelector("#total-credit").value;
+    const parent_id = document.querySelector("#child-parent-id").value;
+    const username = document.querySelector("#username-signup").value;
+    const password = document.querySelector("#password-signup").value;
+    const hint = document.querySelector("#hint-signup").value;
+    const usertype = "Child";
+    
+    // Send fetch request to add a new child record
  
     const user = fetch('/api/user/user/', {
         method: 'POST',
@@ -25,32 +37,42 @@ async function newParentHandler(event) {
     .then(function (response) {
         return response.json();
     })
-    .then(data => {    
+    .then(data => {
         
-            console.log('response from user api ok',user.id);
-            let user_id = data ['id'];
-            const response = fetch(`/api/parent`, {
-                method: 'POST',
-                body: JSON.stringify({
+        let user_id = data ['id'];
+        console.log("Child id", user_id);
+        console.log("Child Details", name, total_credits, credit_type,parent_id,user_id);
+        const response = fetch(`/api/child`, {
+            method: 'POST',
+            body: JSON.stringify({
                 name,
-                email,
-                chart,
+                total_credits,
+                credit_type,
+                parent_id,
                 user_id,
-                }),
-                headers: {
+            }),
+            headers: {
                 'Content-Type': 'application/json',
-                },
-            })
-            .then(function(response) {
-                if (response.ok) {
-                console.log('response from parent api ok',user.id);
-                alert('You are registered pleaselogin to begin');
-                document.location.replace('/');
-                } else {
-                alert('Failed to add parent');
-                }
-            })
-        
-    });
+            },
+        })
+        //if the child  is added, the page will be reloaded
+        .then(function(response) {
+            if (response.ok) {
+                alert('Child Record created successfully');
+                document.location.reload();
+            } else {
+                 alert('Failed to add child');
+            }
+        })
+    })
 };
-document.querySelector('.signup-form').addEventListener('submit', newParentHandler);
+
+const showChildForm = async (event) => {
+    event.preventDefault();
+    console.log(`on load of parent`);
+    document.querySelector(".child-signup-form").style.display = null;
+    document.querySelector("#childAdd").style.display = "none";
+};
+
+document.querySelector("#childSave").addEventListener("click",newChildHandler);
+document.querySelector("#childAdd").addEventListener("click",showChildForm);
