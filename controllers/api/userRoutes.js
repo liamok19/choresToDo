@@ -147,7 +147,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.delete('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
