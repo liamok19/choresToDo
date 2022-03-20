@@ -9,7 +9,7 @@
 }
 #cBackground {
     background-color: #627e9b;
-    background: linear-gradient(#627e9b, #43487e);
+    background: linear-gradient(#e4ded4, rgba(74, 75, 90, 0.541));
 }
 
 #mh1 {
@@ -128,7 +128,7 @@ header {
 
 .form {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
     
 }
@@ -138,8 +138,12 @@ header {
     padding-left: 18vw;
 }
 
-.signup-form {
-    padding-right: 25vw;
+/* .signup-form {
+    /* padding-right: 25vw; 
+}*/
+label{
+    width: 100px;
+    display: inline-block;
 }
 
 .login-form {
