@@ -96,7 +96,3 @@ document
 document
 .querySelector('#signup')
 .addEventListener('click', showSignUpForm); 
-
-
-
-

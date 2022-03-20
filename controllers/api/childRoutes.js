@@ -42,9 +42,7 @@ router.get('/user/:id',  async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-
     try {
-
         const parentData = await Parent.findByPk(req.body.parent_id);
         if (!parentData) {
             res.status(404).json({ message: 'Invalid Parent ID' });
@@ -55,20 +53,17 @@ router.post('/', async (req, res) => {
             res.status(404).json({ message: 'Invalid User ID' });
             return;
         }
-
         const childData = await Child.create({
-
           name: req.body.name,
-          TotalCredits: req.body.TotalCredits,
-          creditType: req.body.creditType,
+          TotalCredits: req.body.total_credits,
+          creditType: req.body.credit_type,
           parent_id: req.body.parent_id,
           user_id: req.body.user_id
         })
-      .then ((resData) => {
-        console.log(resData)
-        return res.status(200).json(resData)
+        .then ((childData) => {
+          return res.status(200).json(childData)
         }
-    )}
+      )}
     catch (err) { 
       console.log(err);
       res.status(400).json(err.message);
@@ -97,8 +92,7 @@ router.put('/:id', async (req, res) => {
             creditType: req.body.creditType,
             parent_id: Parent.parent_id,
             user_id: User.user_id
-            
-         })
+        })
       .then ((child) => {
         
           return res.status(200).json(childData)
