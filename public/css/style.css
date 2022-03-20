@@ -1,9 +1,7 @@
 
 #background {
-    background-color: #1ecae1;
-    background-image: url("main_page_bg.jpg");
-    background-repeat: no-repeat, repeat;
     background-color: #cccccc;
+    padding-bottom: 30vh;
 
 }
 #pBackground {
@@ -14,19 +12,20 @@
 }
 
 #mh1 {
-    font-family: 'Short Stack', cursive;
-    font-size: 250%;
+    font-size: 75px;
     font-weight:900;
     color:#e29eb5;
-    border: 1px solid rgba(0, 0, 0, 0.123);
-    background-color:  rgba(127, 255, 212, 0.637);
-    border-radius:  25px;
+    border: 3px solid #538e73ba;
+    background-color:  #555;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     width: 90%;
     height: 110%;
     text-align: center;
     text-shadow: 3px 3px rgba(100, 24, 24, 0.795);
     margin: auto;
-    text-decoration: underline;
+    
+    /* text-decoration: underline; */
 }
 #ph1 {
     font-family: 'Short Stack', cursive;
@@ -70,10 +69,10 @@ header {
     font-family: 'Short Stack', cursive;
     text-align: center;
 }
-main {
-    text-align: center;
-    font-family: 'Short Stack', cursive;
-}
+/* main {
+    /* text-align: center; */
+    /* font-family: 'Short Stack', cursive; */
+/* } */
 
 .loginbtn {
     color: rgb(218, 218, 218);
@@ -124,15 +123,17 @@ main {
 }
 .page-title{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    padding-left: 18vw;
 }
 
 .signup-form {
-    padding-right: 100px;
+    padding-right: 25vw;
 }
 
 .login-form {
     padding-left: 100px;
+    padding-top:5vh ;
 
 }
 .signup_pgt {
@@ -143,4 +144,25 @@ main {
 .btn-primary {
     background-color: #e29eb5;
     border-color: rgba(100, 24, 24, 0.795);
+    display: block;
+}
+
+#signup{
+    margin-left: 18vw;
+    margin-top: 5vh;
+
+}
+#mh1 {
+    font-family: 'Fredericka the Great', cursive;
+}
+.square {
+    border: double #cccccc 10px;
+}
+
+.img-homepage {
+    max-width: 50%;
+    max-height: 50%;
+    position: static;
+    /* padding-right: 75vw;
+    padding-bottom: 50vh; */
 }
