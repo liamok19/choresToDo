@@ -1,4 +1,4 @@
-   <div id="background">
+<div id="background">
     <header>
         <div class="row">
             <div class="col square">
@@ -22,23 +22,23 @@
                 </aside> --}}
                     {{!-- <div class="login">
                     {{{body}}} --}}
-                        <div class="login-card">
-                            <h2 class="page-title">Login</h2>
-                                <form class="form login-form">
-                                    <div class="form-group">
-                                        <label for="username-login">Username:</label>
-                                        <input class="form-input" type="text" id="username-login" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password-login">Password:</label>
-                                        <input class="form-input" type="password" id="password-login" />
-                                    </div>
-                                    <div class="form-group">
-                                        <button class="btn btn-primary" type="submit">login</button>
-                                    </div>
-                                </form>
-                        </div>
+                    <div class="login-card">
+                        <h2 class="page-title">Login</h2>
+                            <form class="form login-form">
+                                <div class="form-group">
+                                    <label for="username-login">Username:</label>
+                                    <input class="form-input" type="text" id="username-login" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="password-login">Password:</label>
+                                    <input class="form-input" type="password" id="password-login" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit">login</button>
+                                </div>
+                            </form>
                     </div>
+                {{!-- </div> --}}
             </div>
             <div class="col">
                 {{!-- <aside>
@@ -82,16 +82,22 @@
                         </form>
                         </div>
                 </div>
-                  <picture>
-            <source srcset="/images/main_page_bg01.png" type="image/svg+xml">
-                <img src="/public/images/main_page_bg01.png" 
-                class="img-fluid img-homepage" 
-                alt="cleaning_chores">
-        </picture>
-            </div>
-                  
+                <div class="choresImages">
+                    <picture>
+                        <source srcset="/images/main_page_bg01.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg01.png" 
+                            class=" img-homepage" 
+                            alt="cleaning_chores">
+                    </picture>
+                    <picture>
+                        <source srcset="/images/main_page_bg02.png" type="image/svg+xml">
+                        <img src="/public/images/main_page_bg02.png" 
+                            class=" img-homepage" 
+                            alt="bin_chores">
+                    </picture>
+                </div>
+            </div>                 
         </div>
-
     </main>
     <script src="/js/login.js" ></script>
     <script src="/js/parent.js" ></script>
