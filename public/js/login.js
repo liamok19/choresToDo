@@ -1,8 +1,9 @@
 window.onload = function() {
-    document.getElementById(`signup-form`).style.display = "none";
+    document.getElementById('#signup-form').style.display = `none`;
+    console.log('this is working', this);
     };
 
-const loginFormHandler = async (event) => {
+    const loginFormHandler = async (event) => {
         event.preventDefault();
         const username = document.querySelector('#username-login').value.trim();
         const password = document.querySelector('#password-login').value.trim();
@@ -77,8 +78,8 @@ const loginFormHandler = async (event) => {
     
     const showSignUpForm = async (event) => {
         event.preventDefault();
-        document.getElementById("signup-form").style.display = null;
-        document.querySelector("#signup").style.display = "none";
+        document.getElementById("#signup-form").style.display = null;
+        document.getElementById("#signup").style.display = "none";
     };
 document
 .querySelector(".login-form")

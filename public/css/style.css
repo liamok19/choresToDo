@@ -10,6 +10,9 @@
 #cBackground {
     background-color: #627e9b;
     background: linear-gradient(#e4ded4, rgba(74, 75, 90, 0.541));
+    background-image: url("../images/childpage_background.jpg");
+    background-size: 111%;
+    /* margin-right: 10%; */
 }
 
 #mh1 {
@@ -202,6 +205,16 @@ h4{
     text-shadow: 3px 3px #FFAD60;
 }
 
+.choresImagesChild {
+    display: inline-block;
+    /* position: absolute; */
+    width: 20px;
+    height: 20px;
+    /* padding-right: 65%; */
+    /* margin-right: 60px; */
+    max-width: 5%;
+    max-height: 5%;
+}
 /* PARENT details for extra styling */
 .childAdd {
     font-family: 'Fredericka the Great', cursive;
