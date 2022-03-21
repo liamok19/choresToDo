@@ -1,5 +1,5 @@
 window.onload = function() {
-    document.getElementById('#signup-form').style.display = `none`;
+    document.getElementById('signup-form').style.display = `none`;
     console.log('this is working', this);
     };
 
@@ -78,7 +78,7 @@ window.onload = function() {
     
     const showSignUpForm = async (event) => {
         event.preventDefault();
-        document.getElementById("#signup-form").style.display = null;
+        document.getElementById('signup-form').style.display = null;
         document.getElementById("#signup").style.display = "none";
     };
 document
