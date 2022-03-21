@@ -14,9 +14,9 @@
     2. Email: liamokane19@gmail.com
     3. Portfolio: https://liamok19.github.io/liamo_portfolio/
 2. Sharon Martin - Front End & Back End
-    1. Github:
-    2. Email:
-    3. Portfolio:
+    1. Github: https://github.com/fubzee
+    2. Email: fubzee@gmail.com
+    3. Portfolio: https://github.com/fubzee/W8HW-Portfolio.git 
 
 ## Table of contents
 - [Description](#description)

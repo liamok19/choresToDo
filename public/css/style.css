@@ -257,6 +257,8 @@ h4{
 
 .pageBG{
     background: #cccccc;
+    background: linear-gradient(#cccccc, #ffffff);
+
 }
 
 .btn-warning {
@@ -266,4 +268,7 @@ h4{
     font-weight: bolder;
     color: #ffffff;
 
+}
+td, th {
+    border-style: none;
 }
