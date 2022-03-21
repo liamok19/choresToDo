@@ -14,6 +14,7 @@ Support: https://www.npmjs.com/package/bootstrap-to-do-list
 - [Usage](#usage)
 - [License](#license)
 - [UserStory](#userstory)
+- [Wireframe](#wireframe)
 - [Credits](#credits)
 
 ## License
@@ -26,6 +27,7 @@ The younger generation have adapted to tech so easily and we wanted to provide a
 The application provides a Parent user to assign a task to their child. Where a Child user is provided with the finished task option. Each task has a reward assigned to it to keep a track of the child’s achievement. 
 
 ## UserStory
+```md
 **WHEN**  I visit the site for the first time			
 **THEN** I am presented with the homepage, which includes existing chores; navigation links for the homepage and the dashboard; and the option to log in for a Parent or Children	
 
@@ -39,7 +41,7 @@ The application provides a Parent user to assign a task to their child. Where a 
 **WHEN**  the Parent has successfully logged in they're prompted to a task Manager Page					
 **THEN** promted to add in chore for the week. 					
 **WHEN** I click on the button to create a new chore		**THEN** the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post	
-				
+
 **WHEN**  the user is prompted with a weekly chores systems 
 **THEN** they can interact with it once the job is done 					
 **WHEN** the parent reviews the Task manage page 		
@@ -56,7 +58,12 @@ The application provides a Parent user to assign a task to their child. Where a 
 **THEN** I am signed out of the site					
 
 **WHEN**  I am idle on the site for more than a set time	
-**THEN** I am able to view comments but I am prompted to log in again before I can add, update, or delete comments					
+**THEN** I am able to view comments but I am prompted to log in again before I can add, update, or delete comments	```		
+
+## Wireframe
+![wireFrame 01](./public/images/wireframe_01.png) <br><br>
+![wireFrame 02](./public/images/wireframe_02.png) <br><br>
+![wireFrame 03](./public/images/wireframe_03.png) <br><br>
 
 ## Credits
 | Name | Link | 
