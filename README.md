@@ -36,9 +36,7 @@ The application provides a Parent user to assign a task to their child. Where a 
 | **WHEN**  I revisit the site at a later time and choose to sign in | **THEN** I am prompted to enter my username and password	|
 | **WHEN**  the Parent has successfully logged in they're prompted to a task Manager Page | **THEN** promted to add in chore for the week.|
 |**WHEN** I click on the button to create a new chore  | **THEN** the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post |
-| **WHEN**  the user is prompted with a weekly chores systems 
- |**THEN** they can interact with it once the job is done		
- |
+| **WHEN**  the user is prompted with a weekly chores systems |**THEN** they can interact with it once the job is done |
 | **WHEN** the parent reviews the Task manage page 		
  | **THEN** they can reveiw the progress of the childs task	
  |
