@@ -215,6 +215,11 @@ h4{
     max-width: 5%;
     max-height: 5%;
 }
+
+.img-childpage {
+    opacity: .5;
+
+}
 /* PARENT details for extra styling */
 .childAdd {
     font-family: 'Fredericka the Great', cursive;
@@ -248,4 +253,17 @@ h4{
     align-content: stretch;
     flex-wrap: wrap;
     flex-direction: column;
+}
+
+.pageBG{
+    background: #cccccc;
+}
+
+.btn-warning {
+    background-color: #d48011d7;
+    border-color: rgba(100, 24, 24, 0.795);
+    display: block;
+    font-weight: bolder;
+    color: #ffffff;
+
 }
