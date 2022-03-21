@@ -4,10 +4,16 @@
 
 ![alt text](./public/images/Page_title.png) <br><br>
 
-Link: https://chorestodo.herokuapp.com/
-Repo: https://github.com/liamok19/choresToDo.git
-Support: https://www.npmjs.com/package/bootstrap-to-do-list
+- Link: https://chorestodo.herokuapp.com/
+- Repo: https://github.com/liamok19/choresToDo.git
+- Support: https://www.npmjs.com/package/bootstrap-to-do-list
 
+## Team Roles
+1. Liam O'Kane - Team Leader, Back End, Front End & CSS   
+    1. Github: https://github.com/liamok19
+    2. Email: liamokane19@gmail.com
+    3. Portfolio: https://liamok19.github.io/liamo_portfolio/
+2. Sharon Martin - Front End & Back End
 
 ## Table of contents
 - [Description](#description)
