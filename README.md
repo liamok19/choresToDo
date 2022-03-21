@@ -28,7 +28,7 @@ The application provides a Parent user to assign a task to their child. Where a 
 
 ## UserStory
 
-```md
+
 **WHEN**  I visit the site for the first time			
 **THEN** I am presented with the homepage, which includes existing chores; navigation links for the homepage and the dashboard; and the option to log in for a Parent or Children	
 **WHEN**  the Parent  of the child goes to the app they're prompted with a login/homepage 					
@@ -53,7 +53,8 @@ The application provides a Parent user to assign a task to their child. Where a 
 **WHEN**  I click on the logout option in the navigation
 **THEN** I am signed out of the site					
 **WHEN**  I am idle on the site for more than a set time	
-**THEN** I am able to view comments but I am prompted to log in again before I can add, update, or delete comments	```		
+**THEN** I am able to view comments but I am prompted to log in again before I can add, update, or delete comments			
+<br><br>
 
 ## Wireframe
 ![wireFrame 01](./public/images/wireframe_01.png) <br><br>
